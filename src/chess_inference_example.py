@@ -89,7 +89,7 @@ def grid_squares(warp_size=800):
         for c in range(8):
             x1, y1 = c * cell, r * cell
             x2, y2 = (c + 1) * cell, (r + 1) * cell
-            pos = chr(ord('a') + c) + str(8 - r)
+            pos = chr(ord('a') + r) + str(c + 1)
             squares[pos] = [x1, y1, x2, y2]
     return squares
 
@@ -247,7 +247,7 @@ if __name__ == "__main__":
     # Example usage with dual model system
     PIECE_MODEL_PATH = "models/piece_best.pt"          # Piece detection model
     CORNER_MODEL_PATH = "models/corner_best.pt"        # Corner detection model (required)
-    IMAGE_PATH = "chess_board_image.jpg"               # Chess board image
+    IMAGE_PATH = "datos/imagenes/chess_board_image.jpg"             # Chess board image
     
     try:
         print("🔍 Chess Detection with Dual Model System")
@@ -269,7 +269,7 @@ if __name__ == "__main__":
         print(json.dumps({"board_state": result["board_state"]}, indent=2))
         
         # Visualize detections
-        visualize_detections(PIECE_MODEL_PATH, IMAGE_PATH, "annotated_chess_board.jpg")
+        visualize_detections(PIECE_MODEL_PATH, IMAGE_PATH, "resultados/detecciones/annotated_chess_board.jpg")
         
         print("\\n✅ Detection completed successfully!")
         

@@ -1,0 +1,7 @@
+ultralytics
+opencv-python
+numpy
+matplotlib
+PyYAML
+python-chess
+CairoSVG
